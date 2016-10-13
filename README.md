@@ -1,0 +1,1 @@
+Builds a Docker image that I use to locally serve jekyll blogs. The commands needed to start the image and serve a blog are collected in the shell script.
