@@ -3,7 +3,7 @@ MAINTAINER Felix Z. Hoffmann <felix11h.dev@gmail.com>
 
 # adapted from http://www.rampmeupscotty.com/blog/2015/03/31/dockerizing-jekyll/
 
-RUN yum -y install git gcc gcc-c++ make
+RUN yum -y install git gcc gcc-c++ make wget
 
 # install Ruby 2.4.2
 RUN yum -y groupinstall "Development Tools"
