@@ -3,8 +3,22 @@ MAINTAINER Felix Z. Hoffmann <felix11h.dev@gmail.com>
 
 # adapted from http://www.rampmeupscotty.com/blog/2015/03/31/dockerizing-jekyll/
 
-RUN yum -y install git gcc gcc-c++ make ruby-devel rubygems
-RUN gem install jekyll jekyll-paginate jekyll-sitemap therubyracer bundler json --no-doc --no-ri
+RUN yum -y install git gcc gcc-c++ make
+
+# install Ruby 2.4.2
+RUN yum groupinstall "Developlment Tools"
+RUN yum install openssl-devel
+RUN wget http://cache.ruby-lang.org/pub/ruby/ruby-2.4.2.tar.gz
+RUN tar xvfvz ruby-2.4.2.tar.gz
+RUN cd ruby-2.4.2
+RUN ./configure
+RUN make
+RUN make install
+RUN gem update --system
+
+RUN gem install bundler
+RUN gem update
+RUN gem install jekyll jekyll-paginate jekyll-sitemap therubyracer json --no-doc --no-ri
 
 WORKDIR /blog
 
