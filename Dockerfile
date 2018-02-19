@@ -10,8 +10,7 @@ RUN yum -y groupinstall "Development Tools"
 RUN yum -y install openssl-devel
 RUN wget http://cache.ruby-lang.org/pub/ruby/ruby-2.4.2.tar.gz
 RUN tar xvfvz ruby-2.4.2.tar.gz
-RUN cd ruby-2.4.2
-RUN ./configure
+RUN cd ruby-2.4.2 && chmod +x configure && ./configure
 RUN make
 RUN make install
 RUN gem update --system
