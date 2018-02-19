@@ -16,7 +16,6 @@ RUN make
 RUN make install
 RUN gem update --system
 
-RUN gem install bundler
 RUN gem update
 RUN gem install jekyll jekyll-paginate jekyll-sitemap therubyracer json --no-doc --no-ri
 
