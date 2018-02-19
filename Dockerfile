@@ -18,6 +18,7 @@ RUN gem update --system
 
 RUN gem update
 RUN gem install jekyll jekyll-paginate jekyll-sitemap therubyracer json --no-doc --no-ri
+RUN gem install jekyll-feed -v '0.9.3'
 
 WORKDIR /blog
 
